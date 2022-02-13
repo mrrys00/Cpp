@@ -1,9 +1,7 @@
-//
-// Created by mrrys00 on 2/13/22.
-//
-
-#include "Complex.h"
 #include <iostream>
+#include "Revision/Complex.h"
+
+using namespace std;
 
 int main() {
     Complex c1 = Complex(2.6, -3.9), c2 = Complex(2.2,2.2), c3, c4;
@@ -22,6 +20,13 @@ int main() {
     } else {
         std::cout << "Addition override ERROR" << std::endl;
     }
+
+    // let me check how get complex works
+    if (c1.equals(c1.getComplex())) {
+        std::cout << "Works as I assumed before run this shit" << std::endl;
+    } else {
+    }
+    std::cout << "There is some fucking difference; got complex: " << c1.getComplex().toString() << std::endl;
 
     return 0;
 }
