@@ -7,7 +7,7 @@
   Tresc zadan dla Panstwa:
   --------
 Zadanie 0: absolutnie obowiazkowe, chociaz bez punktow
-1. Pierwsza rzecza jest poprawa bledow kompilacji,
+DONE: 1. Pierwsza rzecza jest poprawa bledow kompilacji,
    czyli wpisanie poprawnych Panstwa danych w pliku: @ref main.cpp
 2. Oddanne zadanie musi sie bezwzglednie kompilowac na systemie Linux:
    - Jesli sie nie skompiluje to jest to 0 punktow za zadanie!
@@ -36,12 +36,12 @@ Tresc do implementacji - szukaj w plikach *.h
 **/
 
 /// @todo Uzupelnij swoje dane:
-constexpr const char* const FIRSTNAME = "";
-constexpr const char* const SURNAME   = "";
-constexpr const char* const MAIL    = "";
-constexpr const char* const BOOK_ID = "";
+constexpr const char* const FIRSTNAME = "Szymon";
+constexpr const char* const SURNAME   = "Ryś";
+constexpr const char* const MAIL    = "rys@student.agh.edu.pl";
+constexpr const char* const BOOK_ID = "401471";
 
-constexpr const char* const TEACHER_MAIL = "bazior[at]agh.edu.pl"; // change if not correct
+constexpr const char* const TEACHER_MAIL = "bazior@agh.edu.pl"; // change if not correct
 
 void validateStudentsInfo();
 
