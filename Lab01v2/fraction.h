@@ -60,7 +60,7 @@ ________________________________________________________________________________
 #define IMPLEMENTED_counterOfDestructedFractionsImplemented 1
 #define IMPLEMENTED_readWriteImplemented 1
 #define IMPLEMENTED_fractionNameSettableFromConstructor 1
-#define IMPLEMENTED_fractionConstStaticFieldsImplemented 0
+#define IMPLEMENTED_fractionConstStaticFieldsImplemented 1
 
 /** class PtrCStringVector
  *  @brief Klasa Fraction, którą należy poniżej zaimplementować zgodnie z instrukcją **/
@@ -76,13 +76,9 @@ public:
     static int invalidDenominatorValue;
     static int defaultDenominatorValue;
 
-    Fraction();;
+    Fraction();
     Fraction(int numerator, int denominator);
-    Fraction(int numerator, int denominator, std::string fractionName) {
-        this -> numerator = numerator;
-        this -> denominator = denominator;
-        this -> fractionName = fractionName;
-    }
+    Fraction(int numerator, int denominator, std::string fractionName);
 
     virtual ~Fraction();
 

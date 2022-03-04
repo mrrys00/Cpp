@@ -18,7 +18,20 @@ Fraction::Fraction(int numerator, int denominator = 1) {
     this -> denominator = denominator;
 }
 
+Fraction::Fraction(int numerator, int denominator = 1, std::string fractionName = "noname") {
+    this -> numerator = numerator;
+    this -> denominator = denominator;
+    this -> fractionName = fractionName;
+}
+
 Fraction::Fraction() : numerator{0}, denominator{1} { }
+
+Fraction::~Fraction() {
+    removedFractions_++;
+}
+int Fraction::removedFractions() {
+    return removedFractions_;
+}
 
 void Fraction::setNumerator(int newNumerator) {
     numerator = newNumerator;
@@ -29,11 +42,11 @@ void Fraction::setDenominator(int newDenominator) {
 }
 
 int Fraction::getNumerator() const {
-    return this -> numerator;
+    return numerator;
 }
 
 int Fraction::getDenominator() const {
-    return this -> denominator;
+    return denominator;
 }
 
 void Fraction::print() const {
@@ -41,18 +54,22 @@ void Fraction::print() const {
     cout << numerator << "/" << denominator << endl;
 }
 
-Fraction::~Fraction() {
-    removedFractions_++;
-}
-int Fraction::removedFractions() {
-    return removedFractions_;
-}
+
 
 void Fraction::save(std::ostream &os) const {
     os << numerator << "/" << denominator;
 }
 void Fraction::load(std::istream &is) {
-    is >> numerator >> denominator;
+//    https://stackoverflow.com/questions/14265581/parse-split-a-string-in-c-using-string-delimiter-standard-c
+//    https://www.freecodecamp.org/news/string-to-int-in-c-how-to-convert-a-string-to-an-integer-example/
+
+    std::string str;
+    std::string delimiter = "/";
+    is >> str;
+
+    numerator = std::stoi(str.substr(0, str.find(delimiter)));
+    str.erase(0,str.find(delimiter) + delimiter.length());
+    denominator = std::stoi(str);
 }
 
 std::string Fraction::getFractionName() const {
@@ -66,6 +83,8 @@ int Fraction::getInvalidDenominatorValue() {
 int Fraction::getDefaultDenominatorValue() {
     return defaultDenominatorValue;
 }
+
+
 
 
 

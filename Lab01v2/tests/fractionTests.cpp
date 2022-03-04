@@ -162,7 +162,7 @@ TEST_F(FractionTester, saveImplemented)
 TEST_F(FractionTester, loadImplemented)
 {
     #if IMPLEMENTED_readWriteImplemented
-        constexpr int numerator = 3, denominator = 4;
+        constexpr int numerator = 32, denominator = 67;
 
         Fraction fraction;
 
