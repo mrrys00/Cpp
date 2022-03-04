@@ -10,8 +10,10 @@ using namespace std;
 #ifndef _MSC_FULL_VER // if not Visual Studio Compiler
 
 int Fraction::removedFractions_ = 0;
+int Fraction::invalidDenominatorValue = 0;
+int Fraction::defaultDenominatorValue = 1;
 
-Fraction::Fraction(int numerator, int denominator) {
+Fraction::Fraction(int numerator, int denominator = 1) {
     this -> numerator = numerator;
     this -> denominator = denominator;
 }
@@ -26,11 +28,11 @@ void Fraction::setDenominator(int newDenominator) {
     denominator = newDenominator;
 }
 
-int Fraction::getNumerator() {
+int Fraction::getNumerator() const {
     return this -> numerator;
 }
 
-int Fraction::getDenominator() {
+int Fraction::getDenominator() const {
     return this -> denominator;
 }
 
@@ -51,6 +53,18 @@ void Fraction::save(std::ostream &os) const {
 }
 void Fraction::load(std::istream &is) {
     is >> numerator >> denominator;
+}
+
+std::string Fraction::getFractionName() const {
+    return this -> fractionName;
+}
+
+int Fraction::getInvalidDenominatorValue() {
+    return invalidDenominatorValue;
+}
+
+int Fraction::getDefaultDenominatorValue() {
+    return defaultDenominatorValue;
 }
 
 

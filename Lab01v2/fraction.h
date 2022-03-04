@@ -59,7 +59,7 @@ ________________________________________________________________________________
 #define IMPLEMENTED_hasPrintFunction 1
 #define IMPLEMENTED_counterOfDestructedFractionsImplemented 1
 #define IMPLEMENTED_readWriteImplemented 1
-#define IMPLEMENTED_fractionNameSettableFromConstructor 0
+#define IMPLEMENTED_fractionNameSettableFromConstructor 1
 #define IMPLEMENTED_fractionConstStaticFieldsImplemented 0
 
 /** class PtrCStringVector
@@ -69,19 +69,28 @@ class Fraction {
 protected:
     int numerator;
     int denominator;
+
+    std::string fractionName;
 public:
     static int removedFractions_;
+    static int invalidDenominatorValue;
+    static int defaultDenominatorValue;
 
     Fraction();;
     Fraction(int numerator, int denominator);
+    Fraction(int numerator, int denominator, std::string fractionName) {
+        this -> numerator = numerator;
+        this -> denominator = denominator;
+        this -> fractionName = fractionName;
+    }
 
     virtual ~Fraction();
 
     void setNumerator(int newNumerator);
     void setDenominator(int newDenominator);
 
-    int getNumerator();
-    int getDenominator();
+    int getNumerator() const;
+    int getDenominator() const;
 
     void print() const;
 
@@ -90,6 +99,10 @@ public:
     void save(std::ostream &os) const;
     void load(std::istream &is);
 
+    std::string getFractionName() const;
+
+    static int getInvalidDenominatorValue();
+    static int getDefaultDenominatorValue();
 };
 
 #endif // TASK1_FRACTION_H
