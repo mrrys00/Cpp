@@ -69,7 +69,6 @@ class Fraction {
 protected:
     int numerator;
     int denominator;
-
     std::string fractionName;
 public:
     static int removedFractions_;
