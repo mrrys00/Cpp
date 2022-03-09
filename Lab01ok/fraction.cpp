@@ -13,18 +13,22 @@ int Fraction::removedFractions_ = 0;
 int Fraction::invalidDenominatorValue = 0;
 int Fraction::defaultDenominatorValue = 1;
 
-Fraction::Fraction(int numerator, int denominator = 1) {
-    this -> numerator = numerator;
-    this -> denominator = denominator;
+// g++  --std=c++17 -x c++ -Wall -Wextra -Wpedantic -Weffc++ -g -rdynamic -pipe -frecord-gcc-switches fraction.cpp main.cpp
+
+Fraction::Fraction() : numerator(0), denominator(0) { }
+
+Fraction::Fraction(int numerator, int denominator = defaultDenominatorValue) : numerator(numerator), denominator(denominator) {
+//    this -> numerator = numerator;
+//    this -> denominator = denominator;
 }
 
-Fraction::Fraction(int numerator, int denominator = 1, std::string fractionName = "noname") {
-    this -> numerator = numerator;
-    this -> denominator = denominator;
-    this -> fractionName = fractionName;
+Fraction::Fraction(int numerator, int denominator = defaultDenominatorValue, std::string fractionName = "noname") : numerator(numerator), denominator(denominator), fractionName(fractionName) {
+//    this -> numerator = numerator;
+//    this -> denominator = denominator;
+//    this -> fractionName = fractionName;
 }
 
-Fraction::Fraction() : numerator{0}, denominator{1} { }
+
 
 Fraction::~Fraction() {
     removedFractions_++;

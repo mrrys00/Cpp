@@ -1,0 +1,1 @@
+g++  --std=c++17 -x c++ -Wall -Wextra -Wpedantic -Weffc++ -g -rdynamic -pipe -frecord-gcc-switches fraction.cpp main.cpp
