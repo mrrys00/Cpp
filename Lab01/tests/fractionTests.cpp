@@ -53,8 +53,6 @@ TEST_F(FractionTester, hasNumeratorAndDenominator)
         {
             using Fraction::numerator;
             using Fraction::denominator;
-
-            FractionWrapper() : Fraction(0, std::string()) {}
         };
         ASSERT_TRUE(std::is_member_object_pointer_v<int(FractionWrapper::*)>);
         ASSERT_GT(sizeof(FractionWrapper::numerator),   0);
@@ -83,8 +81,6 @@ TEST_F(FractionTester, hasConstructorWhichInitialiseNumeratorAndDenominator)
             using Fraction::numerator;
             using Fraction::denominator;
             using Fraction::Fraction;
-
-            FractionWrapper() : Fraction(0, std::string()) {}
         };
 
         constexpr int numberator = 3, denominator = 4;
@@ -100,7 +96,7 @@ TEST_F(FractionTester, hasGettersAndSetters)
 {
     #if IMPLEMENTED_hasGettersAndSetters
         constexpr int numberator1 = 3, denominator1 = 4;
-        Fraction fraction(numberator1, denominator1, std::string());
+        Fraction fraction(numberator1, denominator1);
         ASSERT_EQ(numberator1,  fraction.getNumerator());
         ASSERT_EQ(denominator1, fraction.getDenominator());
 
@@ -119,7 +115,7 @@ TEST_F(FractionTester, hasPrintFunction)
 {
     #if IMPLEMENTED_hasPrintFunction
         constexpr int numerator = 3, denominator = 4;
-        Fraction fraction(numerator, denominator, std::string());
+        const Fraction fraction(numerator, denominator);
 
         CoutBufferSentinel coutSentinel;
         fraction.print();
@@ -151,7 +147,7 @@ TEST_F(FractionTester, saveImplemented)
 {
     #if IMPLEMENTED_readWriteImplemented
         constexpr int numerator = 3, denominator = 4;
-        Fraction fraction(numerator, denominator, std::string());
+        const Fraction fraction(numerator, denominator);
         ostringstream outputStream;
         fraction.save(outputStream);
 
@@ -166,14 +162,14 @@ TEST_F(FractionTester, saveImplemented)
 TEST_F(FractionTester, loadImplemented)
 {
     #if IMPLEMENTED_readWriteImplemented
-        constexpr int numerator = 3, denominator = 4;
+        constexpr int numerator = 32, denominator = 67;
 
         Fraction fraction;
 
         const string expectedOutput = to_string(numerator) + "/" + to_string(denominator);
 
         istringstream inputStream(expectedOutput);
-    fraction.load(inputStream);
+        fraction.load(inputStream);
 
         ASSERT_EQ(numerator, fraction.getNumerator());
         ASSERT_EQ(denominator, fraction.getDenominator());
