@@ -17,9 +17,9 @@ int Fraction::defaultDenominatorValue = 1;
 
 Fraction::Fraction() : numerator(0), denominator(0), fractionName("noname") { }
 
-Fraction::Fraction(int numerator, int denominator) : numerator(numerator), denominator(denominator), fractionName("noname") {}
+Fraction::Fraction(int numerator, int denominator = defaultDenominatorValue) : numerator(numerator), denominator(denominator), fractionName("noname") {}
 
-Fraction::Fraction(int numerator, int denominator, std::string fractionName) : numerator(numerator), denominator(denominator), fractionName(fractionName) {}
+Fraction::Fraction(int numerator, int denominator = defaultDenominatorValue, std::string fractionName = "noname") : numerator(numerator), denominator(denominator), fractionName(fractionName) {}
 
 
 
