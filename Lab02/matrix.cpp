@@ -16,10 +16,8 @@ using namespace std;
 TwoDimensionMatrix::TwoDimensionMatrix() : matrix{{0, 0}, {0, 0}} {}
 
 TwoDimensionMatrix::TwoDimensionMatrix(const MatrixElement (*matrix)[2]) : matrix{
-        {matrix[0][0],
-                matrix[0][1]},
-        {matrix[1][0],
-                matrix[1][1]}
+        {matrix[0][0],matrix[0][1]},
+        {matrix[1][0],matrix[1][1]}
 } {}
 
 TwoDimensionMatrix::TwoDimensionMatrix(TwoDimensionMatrix const &other) : matrix{
@@ -35,6 +33,10 @@ MatrixElement TwoDimensionMatrix::get(int row, int col) const {
 
 MatrixElement TwoDimensionMatrix::get(int index) const {
     return matrix[index / 2][index % 2];
+}
+
+void TwoDimensionMatrix::set(int row, int col, int val) {
+    matrix [row][col] = val;
 }
 
 //constexpr size_t TwoDimensionMatrix::getSize() {return size;}
@@ -64,19 +66,29 @@ TwoDimensionMatrix TwoDimensionMatrix::operator&&(const TwoDimensionMatrix &othe
     return out;
 }
 
-//TwoDimensionMatrix::operator size_t() {return TwoDimensionMatrix::getSize();}
-
-MatrixElement *TwoDimensionMatrix::operator[](size_t i) {return matrix[i];}
-
-const MatrixElement *TwoDimensionMatrix::operator[](size_t i) const {return matrix[i];}
-
-TwoDimensionMatrix::operator size_t() const {return TwoDimensionMatrix::getSize();}
-
-constexpr size_t TwoDimensionMatrix::getSize() {return size;}
-
 ostream &operator<<(ostream &o, const TwoDimensionMatrix &matrix) {
     matrix.print(o);
     return o;
+}
+
+istream& operator>>(istream &is, TwoDimensionMatrix matrix) {
+
+    std::string str;
+    std::string delimiter1 = "{";
+    std::string delimiter2 = ",";
+    std::string delimiter3 = "}";
+    std::string newline = "\n";
+
+    std::string sa,sb,sc,sd;
+    is >> sa >> sb >> sc >> sd;
+    int a = std::stoi(sa), b = std::stoi(sb), c = std::stoi(sc), d = std::stoi(sd);
+
+    matrix.set(0,0,a);
+    matrix.set(0,1,b);
+    matrix.set(1,0,c);
+    matrix.set(1,1,d);
+
+    return is;
 }
 
 TwoDimensionMatrix operator+(const TwoDimensionMatrix &matrix1, const TwoDimensionMatrix &matrix2) {

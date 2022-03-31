@@ -81,18 +81,18 @@ public:
 
     MatrixElement get(int row, int col) const;
     MatrixElement get(int index) const;
+    void set(int row, int col, int val);
 
-    static constexpr size_t getSize();;
+    constexpr static size_t getSize() {return size;}
     void print(std::ostream& o) const;
 
     TwoDimensionMatrix& operator=(const TwoDimensionMatrix &other);
     TwoDimensionMatrix& operator*=(MatrixElement number);
     TwoDimensionMatrix operator&&(const TwoDimensionMatrix& other) const;
 
-    explicit operator size_t() const;
-
-    MatrixElement* operator[](size_t i);
-    const MatrixElement* operator[](size_t i) const;
+    explicit operator size_t() const {return TwoDimensionMatrix::getSize();}
+    MatrixElement* operator[](size_t i) {return matrix[i];}
+    const MatrixElement* operator[](size_t i) const {return matrix[i];}
 
 private: // methods:
 
@@ -101,6 +101,7 @@ private: // fields:
 };
 
 std::ostream& operator<<(std::ostream& o, const TwoDimensionMatrix& matrix);
+std::istream& operator>>(std::istream& i, TwoDimensionMatrix matrix);
 TwoDimensionMatrix operator+(const TwoDimensionMatrix& matrix1, const TwoDimensionMatrix& matrix2);
 
 #endif // MATRIX_H
