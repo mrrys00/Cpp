@@ -3,7 +3,7 @@
 
 /** @file matrix.h
 @brief Przeciążanie operatorów na przykładzie Macierzy:
-1. Zaimplementuj klasę TwoDimensionMatrix odzwierciedlajaca macierz 2*2, zawierającą:
+OK 1. Zaimplementuj klasę TwoDimensionMatrix odzwierciedlajaca macierz 2*2, zawierającą:
     - tablice typu MatrixElement (tzn. int), oraz size (=2)
     - konstruktory:
         - bezargumentowy - zerujący wszystkie elementy
@@ -74,11 +74,33 @@ class TwoDimensionMatrix
     constexpr static size_t size = 2;
 
 public:
+    TwoDimensionMatrix();
+    TwoDimensionMatrix(TwoDimensionMatrix const &other);
+    explicit TwoDimensionMatrix(const MatrixElement matrix[size][size]);
+    TwoDimensionMatrix(int a, int b, int c, int d);
+
+    MatrixElement get(int row, int col) const;
+    MatrixElement get(int index) const;
+
+    static constexpr size_t getSize();;
+    void print(std::ostream& o) const;
+
+    TwoDimensionMatrix& operator=(const TwoDimensionMatrix &other);
+    TwoDimensionMatrix& operator*=(MatrixElement number);
+    TwoDimensionMatrix operator&&(const TwoDimensionMatrix& other) const;
+
+    explicit operator size_t() const;
+
+    MatrixElement* operator[](size_t i);
+    const MatrixElement* operator[](size_t i) const;
 
 private: // methods:
 
 private: // fields:
     MatrixElement matrix[size][size];
 };
+
+std::ostream& operator<<(std::ostream& o, const TwoDimensionMatrix& matrix);
+TwoDimensionMatrix operator+(const TwoDimensionMatrix& matrix1, const TwoDimensionMatrix& matrix2);
 
 #endif // MATRIX_H

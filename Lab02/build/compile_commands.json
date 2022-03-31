@@ -1,0 +1,42 @@
+[
+{
+  "directory": "/home/mrrys00/Studia/4.Semestr/Cpp/Cpp/Lab02/build",
+  "command": "/usr/bin/c++ -g -std=c++17 -o CMakeFiles/zad2Matrix_dlaStudentow.dir/main.cpp.o -c /home/mrrys00/Studia/4.Semestr/Cpp/Cpp/Lab02/main.cpp",
+  "file": "/home/mrrys00/Studia/4.Semestr/Cpp/Cpp/Lab02/main.cpp"
+},
+{
+  "directory": "/home/mrrys00/Studia/4.Semestr/Cpp/Cpp/Lab02/build",
+  "command": "/usr/bin/c++ -g -std=c++17 -o CMakeFiles/zad2Matrix_dlaStudentow.dir/matrix.cpp.o -c /home/mrrys00/Studia/4.Semestr/Cpp/Cpp/Lab02/matrix.cpp",
+  "file": "/home/mrrys00/Studia/4.Semestr/Cpp/Cpp/Lab02/matrix.cpp"
+},
+{
+  "directory": "/home/mrrys00/Studia/4.Semestr/Cpp/Cpp/Lab02/build",
+  "command": "/usr/bin/c++ -isystem ../tests/lib/googletest/include -isystem ../tests/lib/googletest -g -std=c++17 -o tests/CMakeFiles/tests.dir/matrixTests.cpp.o -c /home/mrrys00/Studia/4.Semestr/Cpp/Cpp/Lab02/tests/matrixTests.cpp",
+  "file": "/home/mrrys00/Studia/4.Semestr/Cpp/Cpp/Lab02/tests/matrixTests.cpp"
+},
+{
+  "directory": "/home/mrrys00/Studia/4.Semestr/Cpp/Cpp/Lab02/build",
+  "command": "/usr/bin/c++ -isystem ../tests/lib/googletest/include -isystem ../tests/lib/googletest -g -std=c++17 -o tests/CMakeFiles/tests.dir/__/matrix.cpp.o -c /home/mrrys00/Studia/4.Semestr/Cpp/Cpp/Lab02/matrix.cpp",
+  "file": "/home/mrrys00/Studia/4.Semestr/Cpp/Cpp/Lab02/matrix.cpp"
+},
+{
+  "directory": "/home/mrrys00/Studia/4.Semestr/Cpp/Cpp/Lab02/build",
+  "command": "/usr/bin/c++ -isystem ../tests/lib/googlemock/include -isystem ../tests/lib/googlemock -isystem ../tests/lib/googletest/include -isystem ../tests/lib/googletest -g -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++17 -o tests/lib/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /home/mrrys00/Studia/4.Semestr/Cpp/Cpp/Lab02/tests/lib/googlemock/src/gmock_main.cc",
+  "file": "/home/mrrys00/Studia/4.Semestr/Cpp/Cpp/Lab02/tests/lib/googlemock/src/gmock_main.cc"
+},
+{
+  "directory": "/home/mrrys00/Studia/4.Semestr/Cpp/Cpp/Lab02/build",
+  "command": "/usr/bin/c++ -I../tests/lib/googlemock/include -I../tests/lib/googlemock -isystem ../tests/lib/googletest/include -isystem ../tests/lib/googletest -g -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++17 -o tests/lib/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /home/mrrys00/Studia/4.Semestr/Cpp/Cpp/Lab02/tests/lib/googlemock/src/gmock-all.cc",
+  "file": "/home/mrrys00/Studia/4.Semestr/Cpp/Cpp/Lab02/tests/lib/googlemock/src/gmock-all.cc"
+},
+{
+  "directory": "/home/mrrys00/Studia/4.Semestr/Cpp/Cpp/Lab02/build",
+  "command": "/usr/bin/c++ -isystem ../tests/lib/googletest/include -isystem ../tests/lib/googletest -g -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++17 -o tests/lib/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /home/mrrys00/Studia/4.Semestr/Cpp/Cpp/Lab02/tests/lib/googletest/src/gtest_main.cc",
+  "file": "/home/mrrys00/Studia/4.Semestr/Cpp/Cpp/Lab02/tests/lib/googletest/src/gtest_main.cc"
+},
+{
+  "directory": "/home/mrrys00/Studia/4.Semestr/Cpp/Cpp/Lab02/build",
+  "command": "/usr/bin/c++ -I../tests/lib/googletest/include -I../tests/lib/googletest -g -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++17 -o tests/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /home/mrrys00/Studia/4.Semestr/Cpp/Cpp/Lab02/tests/lib/googletest/src/gtest-all.cc",
+  "file": "/home/mrrys00/Studia/4.Semestr/Cpp/Cpp/Lab02/tests/lib/googletest/src/gtest-all.cc"
+}
+]

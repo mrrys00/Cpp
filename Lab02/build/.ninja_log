@@ -1,0 +1,6 @@
+# ninja log v5
+69	101	1648494340992721476	lib/libgtest_maind.a	60ad868d3a17ebf8
+1	69	1648494340956721319	lib/libgtestd.a	332d737e4c462948
+0	2837	1648494325426653394	tests/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o	b24e5f2502bca5d6
+0	703	1648494323297644082	tests/lib/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o	76bfb936d8a15020
+0	193	1648494322787641851	tests/CMakeFiles/tests.dir/__/matrix.cpp.o	46f52223a67e569d
