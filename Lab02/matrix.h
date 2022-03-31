@@ -88,7 +88,11 @@ public:
 
     TwoDimensionMatrix& operator=(const TwoDimensionMatrix &other);
     TwoDimensionMatrix& operator*=(MatrixElement number);
+
+    #pragma GCC diagnostic push
+    #pragma GCC diagnostic ignored "-Weffc++"
     TwoDimensionMatrix operator&&(const TwoDimensionMatrix& other) const;
+    #pragma GCC diagnostic pop
 
     explicit operator size_t() const {return TwoDimensionMatrix::getSize();}
     MatrixElement* operator[](size_t i) {return matrix[i];}

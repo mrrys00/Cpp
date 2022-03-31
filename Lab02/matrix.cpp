@@ -39,8 +39,6 @@ void TwoDimensionMatrix::set(int row, int col, int val) {
     matrix [row][col] = val;
 }
 
-//constexpr size_t TwoDimensionMatrix::getSize() {return size;}
-
 void TwoDimensionMatrix::print(ostream &o) const {
     o << matrix[0][0] << ", " << matrix[0][1] << endl << matrix[1][0] << ", " << matrix[1][1] << endl;
 }
@@ -56,6 +54,8 @@ TwoDimensionMatrix &TwoDimensionMatrix::operator*=(MatrixElement number) {
     return *this;
 }
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Weffc++"
 TwoDimensionMatrix TwoDimensionMatrix::operator&&(const TwoDimensionMatrix &other) const {
     TwoDimensionMatrix out(
             this->get(0) && other.get(0),
@@ -65,6 +65,7 @@ TwoDimensionMatrix TwoDimensionMatrix::operator&&(const TwoDimensionMatrix &othe
     );
     return out;
 }
+#pragma GCC diagnostic pop
 
 ostream &operator<<(ostream &o, const TwoDimensionMatrix &matrix) {
     matrix.print(o);
