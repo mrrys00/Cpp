@@ -42,15 +42,29 @@ Gettery i settery operujace na liczbach, ktore nie rzucaja wyjatku, warto zadekl
 class Fraction
 {
 #ifndef _MSC_FULL_VER // if not Visual Studio Compiler
-    #warning "Klasa jest do zaimplementowania. Instrukcja w pliku naglowkowym"
+//    #warning "Klasa jest do zaimplementowania. Instrukcja w pliku naglowkowym"
 #else
     #pragma message ("Klasa jest do zaimplementowania. Instrukcja w pliku naglowkowym")
 #endif
-// TODO: zaimplementowac cialo klasy, usunac ten komentarz i warning powyzszy
+    
 public:
+    explicit Fraction(int num = 0, int den = 1);
 
-private: // members:
+    void setNumerator(int num);
+    void setDenominator(int den);
 
+    void set(int num, int den);
+
+    int numerator() const;
+    int denominator() const;
+
+    Fraction operator+(const Fraction &secondFraction) const;
+
+    Fraction operator*(const Fraction &secondFraction) const;
+
+private:
+    int numerator_;
+    int denenominator_;
 };
 
 
