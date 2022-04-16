@@ -41,7 +41,7 @@
 #endif
 
 #if __has_include("../stage.h")
-    #include "../stage.h"
+    #include "../stage2.h"
     #define STAGE_H_IMPLEMENTED 1
 #elif __has_include("stage.h")
     #include "stage.h"

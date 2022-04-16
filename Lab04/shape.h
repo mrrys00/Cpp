@@ -52,17 +52,20 @@ odpowiednich miejscach.
 Mozna tworzyc dowolna ilosc metod pomocniczych, jednakze aby byly one prywatne.
 **/
 
+#include <utility>
+
 namespace Shapes
 {
-struct Point
-{
-    int x_, y_;
-};
+    typedef std::pair<int,int> Point;
 
-class Shape
-{
-    // TODO:
-};
+    class Shape
+    {
+    public:
+        Shape() = default;
+        virtual ~Shape() = default;
+
+        [[nodiscard]] virtual bool isIn(int x, int y) const = 0;
+    };
 } // namespace Shapes
 
 #endif // SHAPE_H
