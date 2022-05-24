@@ -68,13 +68,13 @@ void MyList<T>::remove(T elem) {
     }
 }
 
-template<class T>
-std::ostream &operator<<(std::ostream &output, const MyList<T> &mylist) {
-    for(auto iter = mylist.begin(); iter != mylist.end(); ++iter) {
-        output << *iter << ", ";
-    }
-    return output;
-}
+// template<class T>
+// std::ostream &operator<<(std::ostream &output, const MyList<T> &mylist) {
+//     for(auto iter = mylist.begin(); iter != mylist.end(); ++iter) {
+//         output << *iter << ", ";
+//     }
+//     return output;
+// }
 
 //////////////////////////////////////////////////
 

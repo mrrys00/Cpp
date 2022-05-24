@@ -19,6 +19,18 @@ public:
     MyList(const MyList&) = delete;
     MyList & operator=(const MyList&) = delete;
 
+    // DODANE # # # # # #
+
+    typedef T value_type;
+
+    friend std::ostream& operator<<(std::ostream &output, const MyList<T> &l) {
+        for(auto iter = l.begin(); iter != l.end(); ++iter)
+            output << *iter << " -> ";
+        return output;
+    }
+
+    // DODANE # # # # # #
+
     class Node {
         friend class MyList;
     public:
